@@ -22,7 +22,9 @@ define('MODULARITYCONTACTBANNER_TEMPLATE_PATH', MODULARITYCONTACTBANNER_PATH . '
 define('MODULARITYCONTACTBANNER_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
 define('MODULARITYCONTACTBANNER_MODULE_PATH', MODULARITYCONTACTBANNER_PATH . 'source/php/Module/');
 
-load_plugin_textdomain('modularity-contact-banner', false, plugin_basename(dirname(__FILE__)) . '/languages');
+add_action('init', function() {
+    load_plugin_textdomain('modularity-contact-banner', false, plugin_basename(dirname(__FILE__)) . '/languages');
+}); 
 
 // Autoload from plugin
 if (file_exists(MODULARITYCONTACTBANNER_PATH . 'vendor/autoload.php')) {
