@@ -309,7 +309,7 @@ if (function_exists('acf_add_local_field_group')) {
                     'label' => __('Icon', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_icon',
                     'aria-label' => '',
-                    'type' => 'select',
+                    'type' => 'icon',
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
