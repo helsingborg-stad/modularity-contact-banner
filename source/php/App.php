@@ -6,7 +6,7 @@ class App
 {
     public function __construct()
     {
-        add_action('plugins_loaded', array($this, 'registerModule'));
+        add_action('init', array($this, 'registerModule'));
         add_filter('Municipio/Admin/Acf/PrefillIconChoice', array($this, 'addFieldNameToPrefillList'));
     }
 
