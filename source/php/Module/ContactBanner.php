@@ -16,9 +16,9 @@ class ContactBanner extends \Modularity\Module
 
     public function init()
     {
-        $this->nameSingular = __("Contact banner", 'modularity-contact');
-        $this->namePlural = __("Contact banners", 'modularity-contact');
-        $this->description = __("Banner displaying contact details", 'modularity-contact');
+        $this->nameSingular = __('Contact banner', 'modularity-contact');
+        $this->namePlural = __('Contact banners', 'modularity-contact');
+        $this->description = __('Banner displaying contact details', 'modularity-contact');
     }
 
     /**
@@ -58,12 +58,12 @@ class ContactBanner extends \Modularity\Module
 
         //Rename array items (cta)
         \array_walk($data['ctaList'], function (&$item) use ($fieldNamespace) {
-            $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_icon", "icon", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_content", "content", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_url", "url", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_onclick", "onclick", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_label", "label", $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_title', 'title', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_icon', 'icon', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_content', 'content', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_url', 'url', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_onclick', 'onclick', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_label', 'label', $item);
         });
 
         //Format as objects
@@ -73,7 +73,6 @@ class ContactBanner extends \Modularity\Module
 
         //Add visual booleans for cta
         \array_walk($data['ctaList'], function (&$item) {
-
             //Default value
             $item->displayCta = true;
 
@@ -82,11 +81,11 @@ class ContactBanner extends \Modularity\Module
                 $item->displayCta = false;
             }
 
-            if ($item->displayCta && ($item->onclick == "" && $item->url == "")) {
+            if ($item->displayCta && ($item->onclick == '' && $item->url == '')) {
                 $item->displayCta = false;
             }
         });
-        
+
         return $data;
     }
 
@@ -122,7 +121,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function template(): string
     {
-        return "contact-banner.blade.php";
+        return 'contact-banner.blade.php';
     }
 
     /**
@@ -131,11 +130,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function style()
     {
-        wp_register_style(
-            'modularity-contact-banner-css',
-            MODULARITYCONTACTBANNER_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
-        );
-        wp_enqueue_style('modularity-contact-banner-css');
+        $this->wpEnqueue?->add('css/modularity-contact-banner.css');
     }
 
     /**
