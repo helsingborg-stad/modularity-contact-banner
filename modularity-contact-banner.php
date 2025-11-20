@@ -12,6 +12,8 @@
  * Text Domain:       modularity-contact
  * Domain Path:       /languages
  */
+use WpService\Implementations\NativeWpService;
+use WpUtilService\WpUtilService;
 
 // Protect agains direct file access
 if (!defined('WPINC')) die;
@@ -38,9 +40,11 @@ add_filter('/Modularity/externalViewPath', function ($arr) {
     return $arr;
 }, 10, 3);
 
+$wpService = new NativeWpService();
+$wpUtilService = new WpUtilService($wpService);
 
 // Start application
-new ModularityContactBanner\App();
+new ModularityContactBanner\App($wpUtilService->enqueue(__DIR__));
 
 // Acf auto import and export
 add_action('plugins_loaded', function () {
