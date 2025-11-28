@@ -985,16 +985,16 @@
         },
         {
             "name": "helsingborg-stad/municipio",
-            "version": "6.6.20",
+            "version": "6.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/Municipio.git",
-                "reference": "aab1815f4e31f1604701dea9312f72fa77e39671"
+                "reference": "dc3719ab7806f9d3f8561cf3ebefbdd672c68c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/aab1815f4e31f1604701dea9312f72fa77e39671",
-                "reference": "aab1815f4e31f1604701dea9312f72fa77e39671",
+                "url": "https://api.github.com/repos/helsingborg-stad/Municipio/zipball/dc3719ab7806f9d3f8561cf3ebefbdd672c68c52",
+                "reference": "dc3719ab7806f9d3f8561cf3ebefbdd672c68c52",
                 "shasum": ""
             },
             "require": {
@@ -1070,9 +1070,9 @@
             "description": "A bootstrap theme for creating municipality sites.",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/Municipio/issues",
-                "source": "https://github.com/helsingborg-stad/Municipio/tree/6.6.20"
+                "source": "https://github.com/helsingborg-stad/Municipio/tree/6.8.2"
             },
-            "time": "2025-11-27T11:36:43+00:00"
+            "time": "2025-11-27T14:41:59+00:00"
         },
         {
             "name": "helsingborg-stad/schema-library",
@@ -1162,16 +1162,16 @@
         },
         {
             "name": "helsingborg-stad/wputilservice",
-            "version": "0.2.47",
+            "version": "0.2.48",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wputilservice.git",
-                "reference": "313ceb2ec75baf3fd448a179dc1e0cc538c7431a"
+                "reference": "60afacdecc1aa72f14f135916bdffe80abd52dc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wputilservice/zipball/313ceb2ec75baf3fd448a179dc1e0cc538c7431a",
-                "reference": "313ceb2ec75baf3fd448a179dc1e0cc538c7431a",
+                "url": "https://api.github.com/repos/helsingborg-stad/wputilservice/zipball/60afacdecc1aa72f14f135916bdffe80abd52dc0",
+                "reference": "60afacdecc1aa72f14f135916bdffe80abd52dc0",
                 "shasum": ""
             },
             "require": {
@@ -1204,9 +1204,9 @@
             "description": "Simplifies WordPress development by providing a centralized WpUtilService that exposes a WordPress api wrapped in a streamlined manner. Simplify your development workflow and enhance WordPress integration with ease.",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/wputilservice/issues",
-                "source": "https://github.com/helsingborg-stad/wputilservice/tree/0.2.47"
+                "source": "https://github.com/helsingborg-stad/wputilservice/tree/0.2.48"
             },
-            "time": "2025-11-26T09:15:44+00:00"
+            "time": "2025-11-27T13:59:02+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -3168,16 +3168,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v7.3.4",
+            "version": "v7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "f24f8f316367b30810810d4eb30c543d7003ff3b"
+                "reference": "7ca8dc2d0dcf4882658313aba8be5d9fd01026c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/f24f8f316367b30810810d4eb30c543d7003ff3b",
-                "reference": "f24f8f316367b30810810d4eb30c543d7003ff3b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/7ca8dc2d0dcf4882658313aba8be5d9fd01026c8",
+                "reference": "7ca8dc2d0dcf4882658313aba8be5d9fd01026c8",
                 "shasum": ""
             },
             "require": {
@@ -3209,7 +3209,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v7.3.4"
+                "source": "https://github.com/symfony/process/tree/v7.4.0"
             },
             "funding": [
                 {
@@ -3229,7 +3229,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-11T10:12:26+00:00"
+            "time": "2025-10-16T11:21:06+00:00"
         },
         {
             "name": "symfony/translation",
@@ -3414,16 +3414,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v7.3.5",
+            "version": "v7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "476c4ae17f43a9a36650c69879dcf5b1e6ae724d"
+                "reference": "41fd6c4ae28c38b294b42af6db61446594a0dece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/476c4ae17f43a9a36650c69879dcf5b1e6ae724d",
-                "reference": "476c4ae17f43a9a36650c69879dcf5b1e6ae724d",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/41fd6c4ae28c38b294b42af6db61446594a0dece",
+                "reference": "41fd6c4ae28c38b294b42af6db61446594a0dece",
                 "shasum": ""
             },
             "require": {
@@ -3435,10 +3435,10 @@
                 "symfony/console": "<6.4"
             },
             "require-dev": {
-                "symfony/console": "^6.4|^7.0",
-                "symfony/http-kernel": "^6.4|^7.0",
-                "symfony/process": "^6.4|^7.0",
-                "symfony/uid": "^6.4|^7.0",
+                "symfony/console": "^6.4|^7.0|^8.0",
+                "symfony/http-kernel": "^6.4|^7.0|^8.0",
+                "symfony/process": "^6.4|^7.0|^8.0",
+                "symfony/uid": "^6.4|^7.0|^8.0",
                 "twig/twig": "^3.12"
             },
             "bin": [
@@ -3477,7 +3477,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v7.3.5"
+                "source": "https://github.com/symfony/var-dumper/tree/v7.4.0"
             },
             "funding": [
                 {
@@ -3497,7 +3497,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-27T09:00:46+00:00"
+            "time": "2025-10-27T20:36:44+00:00"
         },
         {
             "name": "voku/portable-ascii",

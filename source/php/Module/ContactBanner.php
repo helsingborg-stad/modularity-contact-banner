@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityContactBanner\Module;
+declare(strict_types=1);
 
-use ModularityContactBanner\Helper\CacheBust;
+namespace ModularityContactBanner\Module;
 
 /**
  * Class ContactBanner
@@ -11,7 +11,7 @@ use ModularityContactBanner\Helper\CacheBust;
 class ContactBanner extends \Modularity\Module
 {
     public $slug = 'contact-banner';
-    public $supports = array();
+    public $supports = [];
     public $isBlockCompatible = true;
 
     public function init()
@@ -27,7 +27,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function data(): array
     {
-        $data = array();
+        $data = [];
         $fieldNamespace = 'mod_contactbanner_';
 
         $data['mainContent'] = get_field($fieldNamespace . 'main_content', $this->ID);
@@ -35,7 +35,7 @@ class ContactBanner extends \Modularity\Module
         $data['displayOptions'] = (array) get_field($fieldNamespace . 'display_options', $this->ID);
         $data['hours'] = (array) get_field($fieldNamespace . 'hours_list', $this->ID);
 
-        $data['openHours'] = array();
+        $data['openHours'] = [];
 
         if (in_array('open_hours', $data['displayOptions'])) {
             foreach ($data['hours'] as $key => $time) {
@@ -67,12 +67,12 @@ class ContactBanner extends \Modularity\Module
         });
 
         //Format as objects
-        \array_walk($data['ctaList'], function (&$item) {
+        \array_walk($data['ctaList'], static function (&$item) {
             $item = (object) $item;
         });
 
         //Add visual booleans for cta
-        \array_walk($data['ctaList'], function (&$item) {
+        \array_walk($data['ctaList'], static function (&$item) {
             //Default value
             $item->displayCta = true;
 

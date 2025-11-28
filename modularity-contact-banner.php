@@ -12,11 +12,10 @@
  * Text Domain:       modularity-contact
  * Domain Path:       /languages
  */
-use WpService\Implementations\NativeWpService;
-use WpUtilService\WpUtilService;
 
 // Protect agains direct file access
-if (!defined('WPINC')) die;
+if (!defined('WPINC'))
+    die();
 
 define('MODULARITYCONTACTBANNER_PATH', plugin_dir_path(__FILE__));
 define('MODULARITYCONTACTBANNER_URL', plugins_url('', __FILE__));
@@ -24,9 +23,9 @@ define('MODULARITYCONTACTBANNER_TEMPLATE_PATH', MODULARITYCONTACTBANNER_PATH . '
 define('MODULARITYCONTACTBANNER_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
 define('MODULARITYCONTACTBANNER_MODULE_PATH', MODULARITYCONTACTBANNER_PATH . 'source/php/Module/');
 
-add_action('init', function() {
+add_action('init', function () {
     load_plugin_textdomain('modularity-contact-banner', false, plugin_basename(dirname(__FILE__)) . '/languages');
-}); 
+});
 
 // Autoload from plugin
 if (file_exists(MODULARITYCONTACTBANNER_PATH . 'vendor/autoload.php')) {
@@ -35,16 +34,18 @@ if (file_exists(MODULARITYCONTACTBANNER_PATH . 'vendor/autoload.php')) {
 require_once MODULARITYCONTACTBANNER_PATH . 'Public.php';
 
 // Modularity 3.0 ready - ViewPath for Component library
-add_filter('/Modularity/externalViewPath', function ($arr) {
-    $arr['mod-contact-banner'] = MODULARITYCONTACTBANNER_MODULE_VIEW_PATH;
-    return $arr;
-}, 10, 3);
-
-$wpService = new NativeWpService();
-$wpUtilService = new WpUtilService($wpService);
+add_filter(
+    '/Modularity/externalViewPath',
+    function ($arr) {
+        $arr['mod-contact-banner'] = MODULARITYCONTACTBANNER_MODULE_VIEW_PATH;
+        return $arr;
+    },
+    10,
+    3,
+);
 
 // Start application
-new ModularityContactBanner\App($wpUtilService->enqueue(__DIR__));
+new ModularityContactBanner\App();
 
 // Acf auto import and export
 add_action('plugins_loaded', function () {

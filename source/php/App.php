@@ -1,19 +1,15 @@
 <?php
 
-namespace ModularityContactBanner;
+declare(strict_types=1);
 
-use WpUtilService\Features\Enqueue\EnqueueManager;
+namespace ModularityContactBanner;
 
 class App
 {
-    public function __construct(
-        private EnqueueManager $wpEnqueue,
-    ) {
-        add_action('init', array($this, 'registerModule'));
-        add_filter('Municipio/Admin/Acf/PrefillIconChoice', array($this, 'addFieldNameToPrefillList'));
-        add_action('wp_enqueue_scripts', function () {
-            $this->wpEnqueue->add('css/modularity-contact-banner.css');
-        });
+    public function __construct()
+    {
+        add_action('init', [$this, 'registerModule']);
+        add_filter('Municipio/Admin/Acf/PrefillIconChoice', [$this, 'addFieldNameToPrefillList']);
     }
 
     public function addFieldNameToPrefillList(array $items)
