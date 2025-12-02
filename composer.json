@@ -53,6 +53,5 @@
             "composer/installers": true,
             "carthage-software/mago": true
         }
-    },
-    "version": "4.0.0"
+    }
 }
