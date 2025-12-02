@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityContactBanner\Module;
+declare(strict_types=1);
 
-use ModularityContactBanner\Helper\CacheBust;
+namespace ModularityContactBanner\Module;
 
 /**
  * Class ContactBanner
@@ -11,14 +11,14 @@ use ModularityContactBanner\Helper\CacheBust;
 class ContactBanner extends \Modularity\Module
 {
     public $slug = 'contact-banner';
-    public $supports = array();
+    public $supports = [];
     public $isBlockCompatible = true;
 
     public function init()
     {
-        $this->nameSingular = __("Contact banner", 'modularity-contact');
-        $this->namePlural = __("Contact banners", 'modularity-contact');
-        $this->description = __("Banner displaying contact details", 'modularity-contact');
+        $this->nameSingular = __('Contact banner', 'modularity-contact');
+        $this->namePlural = __('Contact banners', 'modularity-contact');
+        $this->description = __('Banner displaying contact details', 'modularity-contact');
     }
 
     /**
@@ -27,7 +27,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function data(): array
     {
-        $data = array();
+        $data = [];
         $fieldNamespace = 'mod_contactbanner_';
 
         $data['mainContent'] = get_field($fieldNamespace . 'main_content', $this->ID);
@@ -35,7 +35,7 @@ class ContactBanner extends \Modularity\Module
         $data['displayOptions'] = (array) get_field($fieldNamespace . 'display_options', $this->ID);
         $data['hours'] = (array) get_field($fieldNamespace . 'hours_list', $this->ID);
 
-        $data['openHours'] = array();
+        $data['openHours'] = [];
 
         if (in_array('open_hours', $data['displayOptions'])) {
             foreach ($data['hours'] as $key => $time) {
@@ -58,22 +58,21 @@ class ContactBanner extends \Modularity\Module
 
         //Rename array items (cta)
         \array_walk($data['ctaList'], function (&$item) use ($fieldNamespace) {
-            $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_icon", "icon", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_content", "content", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_url", "url", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_onclick", "onclick", $item);
-            $item = $this->renameArrayKey($fieldNamespace . "cta_label", "label", $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_title', 'title', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_icon', 'icon', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_content', 'content', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_url', 'url', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_onclick', 'onclick', $item);
+            $item = $this->renameArrayKey($fieldNamespace . 'cta_label', 'label', $item);
         });
 
         //Format as objects
-        \array_walk($data['ctaList'], function (&$item) {
+        \array_walk($data['ctaList'], static function (&$item) {
             $item = (object) $item;
         });
 
         //Add visual booleans for cta
-        \array_walk($data['ctaList'], function (&$item) {
-
+        \array_walk($data['ctaList'], static function (&$item) {
             //Default value
             $item->displayCta = true;
 
@@ -82,11 +81,11 @@ class ContactBanner extends \Modularity\Module
                 $item->displayCta = false;
             }
 
-            if ($item->displayCta && ($item->onclick == "" && $item->url == "")) {
+            if ($item->displayCta && ($item->onclick == '' && $item->url == '')) {
                 $item->displayCta = false;
             }
         });
-        
+
         return $data;
     }
 
@@ -122,7 +121,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function template(): string
     {
-        return "contact-banner.blade.php";
+        return 'contact-banner.blade.php';
     }
 
     /**
@@ -131,11 +130,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function style()
     {
-        wp_register_style(
-            'modularity-contact-banner-css',
-            MODULARITYCONTACTBANNER_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
-        );
-        wp_enqueue_style('modularity-contact-banner-css');
+        $this->wpEnqueue?->add('css/modularity-contact-banner.css');
     }
 
     /**
