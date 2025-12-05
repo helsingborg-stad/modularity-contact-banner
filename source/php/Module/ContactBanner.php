@@ -130,7 +130,14 @@ class ContactBanner extends \Modularity\Module
      */
     public function style()
     {
-        $this->wpEnqueue?->add('css/modularity-contact-banner.css');
+        // $test = $this->wpEnqueue?->add('css/modularity-contact-banner.css');
+        // echo '<pre>' . print_r( MODULARITYCONTACTBANNER_PATH, true ) . '</pre>';die;
+        wp_register_style(
+            'css/modularity-contact-banner',
+             'https://localhost:8443/wp-content/plugins/modularity-contact-banner/assets/dist/css/modularity-contact-banner.css'
+        );
+
+        wp_enqueue_style('css/modularity-contact-banner');
     }
 
     /**
