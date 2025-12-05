@@ -1,13 +1,13 @@
-<div id="contact" class="c-contact-banner u-print-display--none">
+<div id="contact" class="mod-contact-banner u-print-display--none">
 
     @if(!$hideContentArea || (!$hideTitle && !empty($postTitle)))
-        <div class="c-contact-banner__info-container">
-            <div class="c-contact-banner__content">
+        <div class="mod-contact-banner__info-container">
+            <div class="mod-contact-banner__content">
                 @if (!$hideTitle && !empty($postTitle))
                     @typography([
                         "element" => "h2",
                         "classList" => [
-                            "c-contact-banner__title"
+                            "mod-contact-banner__title"
                         ]
                     ])
                         {!! apply_filters('the_title', $postTitle) !!}
@@ -19,7 +19,7 @@
                 @typography([
                     "element" => "p",
                     "classList" => [
-                        "c-contact-banner__text"
+                        "mod-contact-banner__text"
                     ]
                 ])
                     {!! $mainContent !!}
@@ -30,14 +30,14 @@
 
             @if(!$hideBusinessHours && !empty($headerBusinessHours))
             
-                <div class="c-contact-banner__hours">
+                <div class="mod-contact-banner__hours">
 
                     <!-- Header for business hours -->
                     @typography([
                         "element" => "h3",
                         "variant" => "h4",
                         "classList" => [
-                            "c-contact-banner__hours-title"
+                            "mod-contact-banner__hours-title"
                         ]
                     ])
                         {!! $headerBusinessHours !!}
@@ -66,7 +66,7 @@
                             @typography([
                                     "element" => "p",
                                     "classList" => [
-                                        "c-contact-banner__abnormal-hours"
+                                        "mod-contact-banner__abnormal-hours"
                                     ]
                                 ])
                                     {!! $abnormalHours['text'] !!}
@@ -86,7 +86,7 @@
                     @card([
                         'classList' => [
                             'card-item-'.$index,
-                            'u-box-shadow--0'
+                            'u-box-shadow--0',
                         ],
                             'attributeList' => [
                             'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
@@ -116,12 +116,12 @@
                             @endtypography
                         </div>
 
-                        <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                        <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3 u-align-content--start">
                             {!! $listItem->content !!}
                         </div>
 
                         @if($listItem->displayCta)
-                            <div class="c-card__footer c-contact-banner__footer u-padding__x--4 u-padding__y--2">
+                            <div class="c-card__footer mod-contact-banner__footer u-padding__x--4 u-padding__y--2">
                                 @button([
                                     'text' => $listItem->label,
                                     'color' => 'default',
