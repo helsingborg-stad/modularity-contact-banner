@@ -57,3 +57,4 @@ phpunit-testdox.txt
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.vscode
