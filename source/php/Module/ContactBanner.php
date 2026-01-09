@@ -27,6 +27,7 @@ class ContactBanner extends \Modularity\Module
      */
     public function data(): array
     {
+        $wpService = \Modularity\Helper\WpService::get();
         $data = [];
         $fieldNamespace = 'mod_contactbanner_';
 
@@ -34,6 +35,7 @@ class ContactBanner extends \Modularity\Module
         $data['headerBusinessHours'] = get_field($fieldNamespace . 'header_business_hours', $this->ID);
         $data['displayOptions'] = (array) get_field($fieldNamespace . 'display_options', $this->ID);
         $data['hours'] = (array) get_field($fieldNamespace . 'hours_list', $this->ID);
+        $data['ctaIcon'] = $wpService->applyFilters('Modularity/Module/ContactBanner/CtaIcon', 'arrow_forward');
 
         $data['openHours'] = [];
 

@@ -126,7 +126,7 @@
                                     'text' => $listItem->label,
                                     'color' => 'default',
                                     'style' => 'basic',
-                                    'icon' => 'arrow_forward',
+                                    'icon' => $ctaIcon,
                                     'href' => !empty($listItem->url) ? $listItem->url : '',
                                     'attributeList' => [
                                         'onclick' => !empty($listItem->onclick) ? 'action'.$index.'()' : ''
