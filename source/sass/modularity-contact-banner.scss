@@ -90,6 +90,10 @@ $base: var(--base, 8px);
     .c-card__header {
         display: flex;
         margin-bottom: calc(#{$base} * 3);
+        
+        .c-typography {
+            --inherit-font-size: var(--font-size-200);
+        }
 
         h4 {
             margin-top: 0px;
