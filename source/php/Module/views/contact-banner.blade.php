@@ -30,7 +30,7 @@
 
             @if(!$hideBusinessHours && !empty($headerBusinessHours))
             
-                <div class="mod-contact-banner__hours">
+                <div class="mod-contact-banner__hours u-border__left--1 u-border__left--0@xs u-border__left--0@sm">
 
                     <!-- Header for business hours -->
                     @typography([
@@ -80,13 +80,21 @@
     @endif
 
     @if(isset($ctaList) && !empty($ctaList))
-        @card([])
+        @card(['classList' => ['mod-contact-banner__cta-container']])
             @group(['classList' => []])
                 @foreach ($ctaList as $index => $listItem)
                     @card([
                         'classList' => [
                             'card-item-'.$index,
                             'u-box-shadow--0',
+                            'u-border--0',
+                            !$loop->last ? 'u-border__right--1' : null,
+                            !$loop->last ? 'u-border__bottom--1' : null,
+                            'u-border__right--0@xs',
+                            'u-border__right--0@sm',
+                            'u-border__bottom--0@md',
+                            'u-border__bottom--0@lg',
+                            'u-border-radius--0',
                         ],
                             'attributeList' => [
                             'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
