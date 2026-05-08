@@ -25,14 +25,12 @@ $base: var(--base, 8px);
 
     &__title {
         font-size: calc(#{$base} * 4.5);
-        color: var(--color-mono-darkest, #3D3D3D);
         &:first-child {
             margin-top: -0.2em;
         }
     }
 
     &__text {
-        color: var(--color-mono-darkest, #3D3D3D);
     }
 
     &__hours {
@@ -68,11 +66,6 @@ $base: var(--base, 8px);
             flex-direction: column;
             box-shadow: none;
             border-radius: 0px;
-            background-color: transparent;
-            border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-        }
-        &:last-child  {
-            border-right: none;
         }
     }
 
@@ -84,13 +77,10 @@ $base: var(--base, 8px);
 
     .c-card__body {
         flex-grow: 1;
-        color: var(--color-darkest, #3d3d3d);
     }
 
     .c-card__header {
         display: flex;
-        margin-bottom: calc(#{$base} * 3);
-        
         .c-typography {
             --inherit-font-size: var(--font-size-200);
         }
@@ -115,7 +105,6 @@ $base: var(--base, 8px);
             height: unset;
             width:100%;
             border-right: none;
-            border-bottom: var(--border-width-divider, 1px) solid var(--color-border-divider, #E5E5E5);
             &:last-child {
                 border-bottom: none;
             }
@@ -132,7 +121,6 @@ $base: var(--base, 8px);
             max-width: 30%;
             margin-top: 0;
             margin-left: auto;
-            border-left: 2px solid var(--color-mono-lighter, #E5E5E5);
             padding-left: calc(#{$base} * 3);
         }
 
