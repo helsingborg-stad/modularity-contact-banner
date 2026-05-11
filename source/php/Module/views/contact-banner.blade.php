@@ -97,7 +97,7 @@
                             'u-border-radius--0',
                         ],
                             'attributeList' => [
-                            'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
+                            'aria-labelledby' => 'mod-contactbanner-' . $uniqueID . '-' . $index
                         ],
                         'context' => 'contactbanner'
                     ])
@@ -116,7 +116,7 @@
                             @typography([
                                 'element' => 'h3',
                                 'variant' => 'h3',
-                                'id'      => 'mod-contactbanner-' . $ID . '-' . $index,
+                                'id'      => 'mod-contactbanner-' . $uniqueID . '-' . $index,
                                 'classList' => ['u-margin__left--2', 'u-margin__top--0']
                             ])
         

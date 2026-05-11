@@ -86,6 +86,11 @@ class ContactBanner extends \Modularity\Module
             }
         });
 
+        //Set id if not set (for backward compatibility)
+        if (empty($data['ID'])) {
+            $data['uniqueID'] = rand(1000, 9999);
+        }
+
         return $data;
     }
 
