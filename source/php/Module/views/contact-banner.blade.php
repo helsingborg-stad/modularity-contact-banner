@@ -96,9 +96,6 @@
                             'u-border__bottom--0@lg',
                             'u-border-radius--0',
                         ],
-                            'attributeList' => [
-                            'aria-labelledby' => 'mod-contactbanner-' . $uniqueID . '-' . $index
-                        ],
                         'context' => 'contactbanner'
                     ])
 
