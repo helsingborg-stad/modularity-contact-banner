@@ -1,4 +1,4 @@
-<div id="contact" class="mod-contact-banner u-print-display--none" role="region" aria-label="Contact">
+<div id="contact" class="mod-contact-banner u-print-display--none" role="region" aria-label="{{$language->contact}}">
 
     @if(!$hideContentArea || (!$hideTitle && !empty($postTitle)))
         <div class="mod-contact-banner__info-container">
