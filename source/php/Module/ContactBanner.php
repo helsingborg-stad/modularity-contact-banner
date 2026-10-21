@@ -54,6 +54,7 @@ class ContactBanner extends \Modularity\Module
         $data['hideBusinessHours'] = !in_array('open_hours', $data['displayOptions']);
         $data['hideContentArea'] = $this->hideContentArea($data);
         $data['ctaIcon'] = $wpService->applyFilters('Modularity/ContactBanner/ctaIcon', 'arrow_forward');
+        $data['language'] = $this->getLanguage();
 
         //Map module data to camel case vars
         $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
@@ -122,6 +123,18 @@ class ContactBanner extends \Modularity\Module
         $array[$to] = $array[$from];
         unset($array[$from]);
         return $array;
+    }
+
+    /**
+     * Get the translated labels used by the module.
+     *
+     * @return object The language object.
+     */
+    private function getLanguage(): object
+    {
+        return (object) [
+            'contact' => __('Contact', 'modularity-contact-banner'),
+        ];
     }
 
     /**
