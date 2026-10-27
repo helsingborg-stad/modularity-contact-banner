@@ -1,4 +1,19 @@
-<div id="contact" class="mod-contact-banner u-print-display--none" role="region" aria-label="{{$language->contact}}">
+@php
+    $hasVisibleTitle = !$hideTitle && !empty($postTitle);
+@endphp
+{{-- Anchor target (#contact) sits on the visible heading when there is one, so that
+     screen readers move focus to it and continue reading the content (WCAG 2.4.3).
+     Without a visible heading the region itself receives focus. --}}
+<div
+    @if(!$hasVisibleTitle) id="contact" tabindex="-1" @endif
+    class="mod-contact-banner u-print-display--none"
+    role="region"
+    @if($hasVisibleTitle)
+        aria-labelledby="contact"
+    @else
+        aria-label="{{$language->contact}}"
+    @endif
+>
 
     @if(!$hideContentArea || (!$hideTitle && !empty($postTitle)))
         <div class="mod-contact-banner__info-container">
@@ -6,8 +21,12 @@
                 @if (!$hideTitle && !empty($postTitle))
                     @typography([
                         "element" => "h2",
+                        "id" => "contact",
                         "classList" => [
                             "mod-contact-banner__title"
+                        ],
+                        "attributeList" => [
+                            "tabindex" => "-1"
                         ]
                     ])
                         {!! apply_filters('the_title', $postTitle) !!}
