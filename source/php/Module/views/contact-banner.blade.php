@@ -1,13 +1,30 @@
-<div id="contact" class="mod-contact-banner u-print-display--none" role="region" aria-label="{{$language->contact}}">
-
+@element([
+    'id' => 'contact-' . $uniqueID,
+    'classList' => [
+        'mod-contact-banner',
+        'u-print-display--none'
+    ],
+    'attributeList' => array_merge([
+        'role' => 'region'
+    ], $hideTitle || empty($postTitle) ? [
+        'aria-label' => $language->contact,
+        'tabindex' => '-1'
+    ] : [
+        'aria-labelledby' => 'contact-title-' . $uniqueID
+    ])
+])
     @if(!$hideContentArea || (!$hideTitle && !empty($postTitle)))
         <div class="mod-contact-banner__info-container">
             <div class="mod-contact-banner__content">
                 @if (!$hideTitle && !empty($postTitle))
                     @typography([
                         "element" => "h2",
+                        "id" => "contact-title-{{$uniqueID}}",
                         "classList" => [
                             "mod-contact-banner__title"
+                        ],
+                        "attributeList" => [
+                            "tabindex" => "-1"
                         ]
                     ])
                         {!! apply_filters('the_title', $postTitle) !!}
@@ -152,5 +169,4 @@
             @endgroup
         @endcard
     @endif
-
-</div>
+@endelement
