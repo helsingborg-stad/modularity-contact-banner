@@ -89,14 +89,25 @@ class ContactBanner extends \Modularity\Module
             }
         });
 
-        //Set id if not set (for backward compatibility)
-        if (empty($data['ID'])) {
-            $data['uniqueID'] = rand(1000, 9999);
-        } else {
-            $data['uniqueID'] = $data['ID'];
-        }
+        //Use the module id for stable element ids, random fallback when missing (e.g. block preview)
+        $data['uniqueID'] = !empty($this->ID) ? $this->ID : rand(1000, 9999);
+
+        //Editor defined anchor, used as id so the module can be linked to with #anchor
+        $data['anchor'] = $this->sanitizeAnchor((string) get_field($fieldNamespace . 'anchor', $this->ID));
+        $data['elementId'] = $data['anchor'] ?: 'contact-' . $data['uniqueID'];
 
         return $data;
+    }
+
+    /**
+     * Sanitize an editor supplied anchor into a valid id attribute value.
+     *
+     * @param string $anchor
+     * @return string
+     */
+    private function sanitizeAnchor(string $anchor): string
+    {
+        return sanitize_title(ltrim(trim($anchor), '#'));
     }
 
     /**

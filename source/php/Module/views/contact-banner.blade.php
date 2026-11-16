@@ -1,14 +1,14 @@
 @element([
-    'id' => 'contact-' . $uniqueID,
+    'id' => $elementId,
     'classList' => [
         'mod-contact-banner',
         'u-print-display--none'
     ],
     'attributeList' => array_merge([
-        'role' => 'region'
-    ], $hideTitle || empty($postTitle) ? [
-        'aria-label' => $language->contact,
+        'role' => 'region',
         'tabindex' => '-1'
+    ], $hideTitle || empty($postTitle) ? [
+        'aria-label' => $language->contact
     ] : [
         'aria-labelledby' => 'contact-title-' . $uniqueID
     ])
@@ -19,7 +19,7 @@
                 @if (!$hideTitle && !empty($postTitle))
                     @typography([
                         "element" => "h2",
-                        "id" => "contact-title-{{$uniqueID}}",
+                        "id" => "contact-title-" . $uniqueID,
                         "classList" => [
                             "mod-contact-banner__title"
                         ],

@@ -12,3 +12,9 @@ msgstr ""
 
 msgid "Contact"
 msgstr "Kontakt"
+
+msgid "Anchor"
+msgstr "Ankare"
+
+msgid "Optional. Link to the module with #anchor, e.g. #contact-center. Letters, numbers and hyphens only. Keyboard and screen reader focus is moved to the module when the link is followed."
+msgstr "Valfritt. Länka till modulen med #ankare, t.ex. #kontaktcenter. Endast bokstäver, siffror och bindestreck. Tangentbords- och skärmläsarfokus flyttas till modulen när länken följs."

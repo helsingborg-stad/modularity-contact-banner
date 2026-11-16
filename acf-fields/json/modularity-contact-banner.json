@@ -409,6 +409,26 @@
                     "parent_repeater": "field_5e1ed6113cdb8"
                 }
             ]
+        },
+        {
+            "key": "field_6738a1c2b4d01",
+            "label": "Anchor",
+            "name": "mod_contactbanner_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Link to the module with #anchor, e.g. #contact-center. Letters, numbers and hyphens only. Keyboard and screen reader focus is moved to the module when the link is followed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "contact-center",
+            "prepend": "#",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
