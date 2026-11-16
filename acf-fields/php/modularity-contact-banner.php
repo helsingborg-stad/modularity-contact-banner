@@ -417,6 +417,26 @@ if (function_exists('acf_add_local_field_group')) {
                 ),
             ),
         ),
+        6 => array(
+            'key' => 'field_6738a1c2b4d01',
+            'label' => __('Anchor', 'modularity-contact-banner'),
+            'name' => 'mod_contactbanner_anchor',
+            'aria-label' => '',
+            'type' => 'text',
+            'instructions' => __('Optional. Link to the module with #anchor, e.g. #contact-center. Letters, numbers and hyphens only. Keyboard and screen reader focus is moved to the module when the link is followed.', 'modularity-contact-banner'),
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => 'contact-center',
+            'prepend' => '#',
+            'append' => '',
+            'maxlength' => '',
+        ),
     ),
     'location' => array(
         0 => array(
